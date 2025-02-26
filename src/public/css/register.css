@@ -1,0 +1,91 @@
+main {
+  width: 600px;
+  margin: 0 auto;
+}
+h2 {
+  margin-bottom: 8px;
+}
+.register-form__name {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+}
+.register-form__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+.register-form__category {
+  color: gray;
+}
+.register-form__category-required {
+  background-color: red;
+  font-size: 12px;
+  color: aliceblue;
+}
+.register-product_name {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.register-product_price {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.register-form__category-required-ok{
+  color: red;
+}
+.register-product_img {
+  display: none;
+}
+.custom-file-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ccc;
+  border-radius: 4px;
+}
+label {
+  margin-right: 30px;
+}
+.register-product_text {
+  width: 600px;
+  height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+.register-form__btn {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.register-form__btn-back {
+  background-color: #ccc;
+  min-width: 250px;
+  border: none;
+  font-size: 15px;
+  padding: 15px;
+  border-radius: 4px;
+}
+.register-form__btn-entry {
+  background-color: #FFD700;
+  min-width: 250px;
+  border: none;
+  font-size: 15px;
+  border-radius: 4px;
+}
+.form__error {
+  margin-top: 8px;
+  color: red;
+}
+
+

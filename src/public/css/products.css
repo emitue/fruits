@@ -1,0 +1,81 @@
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.add-product {
+  background-color: orange;
+  color: gray;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.blade__inner {
+  display: flex;
+}
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  margin: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid gray;
+  width: 240px;
+
+}
+.search-form__keyword-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.search-form button {
+  padding: 10px;
+  font-size: 12px;
+  background-color: rgb(255, 208, 0);
+  color: gray;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 15px;
+}
+.search-price {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  color: gray;
+  margin-bottom: 16px;
+}
+.goods_list ol {
+  display: flex;
+  flex-wrap: wrap;
+  /* 折り返し可能に */
+  gap: 20px;
+  /* list-style: none; */
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px;
+  justify-content: center;
+  /* 中央寄せ */
+}
+
+.goods_list li {
+  width: calc(33.33% - 20px);
+  /* 3列に分割、gap調整 */
+  text-align: center;
+}
+
+.goods_list img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
