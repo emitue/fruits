@@ -1,0 +1,31 @@
+.form-group {
+  display: flex;
+}
+.form-group__img {
+  object-fit: cover;
+  width: 500px;
+}
+.form-group__name {
+  margin: 50px 0;
+  padding-bottom: 50px;
+}
+ul {
+  margin: 50px;
+  padding-left: 0;
+}
+li {
+  margin:30px;
+  list-style: none;
+}
+.form-group__mes {
+  padding: 30px;
+}
+textarea {
+  width: 700px;
+  height: 100px;
+}
+.text-danger {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}

@@ -9,8 +9,9 @@
   <div class="register-form">
     <h2 class="register-form__heading content__heading">商品登録</h2>
     <div class="register-form__inner">
-      <!-- <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data"> -->
-      <form action="/products/update" method="post">
+      <form action="/products/register" method="post">
+      <!-- <form action="{{ route('products.register') }}" method="post" enctype="multipart/form-data"> -->
+      <!-- <form action="/products/update" method="post"> -->
         @method('PATCH')
         @csrf
         <div class="register-form__name">
@@ -19,7 +20,7 @@
             <p class="register-form__category-required">必須</p>
           </div>
           <input class="register-product_name" type="text" name="name" value="{{ old('name') }}" placeholder="商品名を入力" required>
-          <input type="hidden" name="id" value="{{ $products['id'] }}">
+          <input type="hidden" name="id" value="{{ $products->id }}">
           <div class="form__error">
             @error('name')
             {{ $message }}
@@ -31,7 +32,7 @@
             <p class="register-form__category">値段</p>
             <p class="register-form__category-required">必須</p>
           </div>
-          <input class="register-product_price" type="number" name="price" value="{{ old('price') }}" placeholder="値段を入力" required>
+          <input class="register-product_price" type="text" name="price" value="{{ old('price') }}" placeholder="値段を入力" required>
           <div class="form__error">
             @error('price')
             {{ $message }}

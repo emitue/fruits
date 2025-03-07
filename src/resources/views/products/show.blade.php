@@ -29,8 +29,8 @@
             </div>
 
             <a href="{{ route('products.index') }}" class="btn btn-secondary">戻る</a>
-            <a href="{{ route('products.edit', $product->id]) }}" class="btn btn-warning">変更を保存</a>
-            <form action="{{ route('products.destroy', $product) }}" method="POST" onsubmit="return confirm('本当に削除しますか？');">
+            <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning">変更を保存</a>
+            <form action="{{ route('products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('本当に削除しますか？');">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">削除</button>

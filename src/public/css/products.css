@@ -59,12 +59,11 @@ select {
   flex-wrap: wrap;
   /* 折り返し可能に */
   gap: 20px;
-  /* list-style: none; */
+  list-style: none;
   padding: 0;
   margin: 0 auto;
   max-width: 800px;
   justify-content: center;
-  /* 中央寄せ */
 }
 
 .goods_list li {
@@ -77,5 +76,8 @@ select {
   width: 100%;
   height: auto;
   border-radius: 8px;
+}
+button {
+  display: block;
 }
 

@@ -25,7 +25,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'price' => ['required', 'numeric', 'max:5'],
+            'price' => ['required', 'numeric', 'max:10000'],
             'image' => ['required'],
             'image.*' => ['image', 'mimes:png,jpeg'],
             'seasons' => ['required'],
@@ -45,5 +45,10 @@ class ProductRequest extends FormRequest
             'description' => '商品説明を入力してください'
             'description.max' => '120文字以内で入力してください'
         ]
+    }
+
+    protected function getRedirectUrl()
+    {
+        return 'verror';
     }
 }

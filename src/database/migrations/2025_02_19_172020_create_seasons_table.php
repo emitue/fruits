@@ -17,7 +17,7 @@ class CreateSeasonsTable extends Migration
             $table->id();
             $table->string('name');
             $table->timestamp('created_at');
-            $table->timestamp('update_at');
+            $table->timestamp('updated_at');
         });
     }
 

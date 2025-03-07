@@ -8,7 +8,7 @@
   <section>
     <div class="search">
       <h2>商品一覧</h2>
-      <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">＋商品を追加</a>
+      <a href= "{{ route('products.register') }}" method="POST" class="btn btn-primary mb-3">＋商品を追加</a>
     </div>
   </section>
   <section>
