@@ -18,7 +18,7 @@ class ProductsTableSeeder extends Seeder
         $products = [
             'name' => 'キウイ',
             'price' => '800',
-            'image' => '/src/storage/fruits-img/kiwi.png',
+            'image' => 'storage/products/fruits-img/kiwi.png',
             'description' => 'キウイは甘みと酸味のバランスが絶妙なフルーツです。ビタミンCなどの栄養も豊富のため、美肌効果や疲労回復効果も期待できます。もぎたてフルーツのスムージーをお召し上がりください!',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -27,7 +27,7 @@ class ProductsTableSeeder extends Seeder
         $products = [
             'name' => 'ストロベリー',
             'price' => '1200',
-            'image' => '/src/storage/fruits-img/strawberry.png',
+            'image' => 'storage/products/fruits-img/strawberry.png',
             'description' => '大人から子供まで大人気のストロベリー。当店では鮮度抜群の完熟いちごを使用しています。ビタミンＣはもちろん食物繊維も豊富なため、腸内環境の改善も期待できます。もぎたてフルーツのスムージーをお召し上がりください!',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -36,7 +36,7 @@ class ProductsTableSeeder extends Seeder
         $products = [
             'name' => 'オレンジ',
             'price' => '850',
-            'image' => '/src/storage/fruits-img/orange.png',
+            'image' => 'storage/products/fruits-img/orange.png',
             'description' => '当店では酸味と甘みのバランスが抜群のネーブルオレンジを使用しています。酸味は控えめで、甘さと濃厚な果汁が魅力の商品です。もぎたてフルーツのスムージをお召し上がりください!',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -45,7 +45,7 @@ class ProductsTableSeeder extends Seeder
         $products = [
             'name' => 'スイカ',
             'price' => '700',
-            'image' => '/src/storage/fruits-img/watermelon.png',
+            'image' => 'storage/products/fruits-img/watermelon.png',
             'description' => '甘くてシャリシャリ食感が魅力のスイカ。全体の90％が水分のため、暑い日の水分補給や熱中症予防、カロリーが気になる方にもおすすめの商品です。もぎたてフルーツのスムージーをお召し上がりください!',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -54,7 +54,7 @@ class ProductsTableSeeder extends Seeder
         $products = [
             'name' => 'ピーチ',
             'price' => '1000',
-            'image' => '/src/storage/fruits-img/peach.png',
+            'image' => 'storage/products/fruits-img/peach.png',
             'description' => '芳醇な香りととろけるような甘さが魅力のピーチ。美味しさはもちろん見た目の可愛さも抜群の商品です。ビタミンEが豊富なため、生活習慣病の予防にもおすすめです。もぎたてフルーツのスムージーをお召し上がりください!',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -63,7 +63,7 @@ class ProductsTableSeeder extends Seeder
         $products = [
             'name' => 'シャインマスカット',
             'price' => '1400',
-            'image' => '/src/storage/fruits-img/muscat.png',
+            'image' => 'storage/products/fruits-img/muscat.png',
             'description' => '爽やかな香りと上品な甘みが特徴的なシャインマスカットは大人から子供まで大人気のフルーツです。疲れた脳や体のエネルギー補給にも最適の商品です。もぎたてフルーツのスムージーをお召し上がりください!',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -72,7 +72,7 @@ class ProductsTableSeeder extends Seeder
         $products = [
             'name' => 'パイナップル',
             'price' => '800',
-            'image' => '/src/storage/fruits-img/pineapple.png',
+            'image' => 'storage/products/fruits-img/pineapple.png',
             'description' => '甘酸っぱさとトロピカルな香りが特徴のパイナップル。当店では甘さと酸味のバランスが絶妙な国産のパイナップルを使用しています。もぎたてフルーツのスムージーをお召し上がりください!',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -81,7 +81,7 @@ class ProductsTableSeeder extends Seeder
         $products = [
             'name' => 'ブドウ',
             'price' => '1100',
-            'image' => '/src/storage/fruits-img/grapes.png',
+            'image' => 'storage/products/fruits-img/grapes.png',
             'description' => 'ブドウの中でも人気の高い国産の「巨峰」を使用しています。もぎたてフルーツのスムージーをお召し上がりください!',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -90,7 +90,7 @@ class ProductsTableSeeder extends Seeder
         $products = [
             'name' => 'バナナ',
             'price' => '600',
-            'image' => '/src/storage/fruits-img/banana.png',
+            'image' => 'storage/products/fruits-img/banana.png',
             'description' => '低下カロリーでありながら栄養満点のため、ダイエット中の方にもおすすめの商品です。１杯でバナナの濃厚な甘味を存分に堪能できます。もぎたてフルーツのスムージーをお召し上がりください!',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -99,7 +99,7 @@ class ProductsTableSeeder extends Seeder
         $products = [
             'name' => 'メロン',
             'price' => '900',
-            'image' => '/src/storage/fruits-img/melon.png',
+            'image' => 'storage/products/fruits-img/melon.png',
             'description' => '香りがよくジューシーで品のある甘さが人気のメロンスムージー。カリウムが多く含まれているためむくみ解消効果も抜群です。もぎたてフルーツのスムージーをお召し上がりください!',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

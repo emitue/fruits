@@ -41,10 +41,10 @@ class ProductRequest extends FormRequest
             'price.max' => '0~10000円以内で入力してください',
             'image.required' => '商品画像を登録してください',
             'image.mimes' => '「.png」または「.jpeg」形式でアップロードしてください',
-            'season[]' => '季節を選択してください'
-            'description' => '商品説明を入力してください'
+            'season[]' => '季節を選択してください',
+            'description' => '商品説明を入力してください',
             'description.max' => '120文字以内で入力してください'
-        ]
+        ];
     }
 
     protected function getRedirectUrl()

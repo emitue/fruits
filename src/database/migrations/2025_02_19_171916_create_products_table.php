@@ -19,8 +19,8 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->string('image');
             $table->text('description');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamp('created_at')->useCurrent()->nullable();
+            $table->timestamp('updated_at')->useCurrent()->nullable();
         });
     }
 

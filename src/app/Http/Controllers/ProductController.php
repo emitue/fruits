@@ -8,8 +8,6 @@ use App\Models\Season;
 use App\Models\Product_season;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductRequest;
-use App\Http\Requests\StoreProductRequest;
-use App\Http\Requests\UpdateProductRequest;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -19,63 +17,109 @@ class ProductController extends Controller
     // 商品一覧
     public function index(Request $request)
     {
-        $keyword = $request->input('keyword');
-        $products = Product::query();
-        if (!empty($keyword)) {
-            $products->where('name', 'LIKE', "%{$keyword}%")->orWhere('description', 'LIKE', "%{$keyword}%");
-        }
-        $products = $products->orderBy('created_at', 'desc')->paginate(6);
-        return view('products.index', compact('products', 'keyword'));
+        $keyword = $request->input('keyword', '');
+        $sort = $request->input('sort', 'asc');
+
+        $query = Product::query();
+
+        $products = Product::simplePaginate(6);
+
+        // dd($products);
+        return view('products.index', compact('products', 'keyword', 'sort'));
     }
     // 商品詳細
     public function show($productId)
     {
         $product = Product::findOrFail($productId);
-        return view('products.show',compact('product'));
+        $seasons = Season::all();
+        return view('products.show',compact('product', 'seasons'));
     }
-    // 商品登録フォーム表示
-    public function create()
-    {
-        return view('confirm');
-    }
-    // 商品登録処理
-    public function store(StoreProductRequest $request)
+    // 商品更新処理
+    public function update(ProductRequest $request, Product $product)
     {
         $validated = $request->validated();
+
         if ($request->hasFile('image')) {
             $validated['image'] = $request->file('image')->store('products', 'public');
         }
-        $product = Product::create($validated);
-        if (!empty($validated['seasons'])){
-            $product->seasons()->attach($validated['seasons']);
-        }
-        return redirect()->route('products.index');
-    }
-    // 商品編集フォーム表示
-    public function edit($productId)
-    {
-        $product = Product::findOrFail($productId);
-        return view('products.edit', compact('product'));
-    }
-    // 商品更新処理
-    public function update(UpdateProductRequest $request, Product $product)
-    {
-        $products = $request->only(['name', 'price', 'seasons', 'image' ,'description']);
-        // $validated = $request->validated();
-        // if ($request->hasFile('image')) {
-        //     $validated['image'] = $request->file('image')->store('products', 'public');
-        // }
-        // $product->update($validated);
-        // $product->seasons()->sync($validated['seasons'] ?? []);
 
-        return redirect()->route('products.show');
+        $product->update($validated);
+
+        $product->seasons()->sync($validated['seasons'] ?? []);
+
+        return view('products.show');
+        // $product = $request->only(['name', 'price', 'seasons', 'image' ,'description']);
+
+        // return redirect('products.index');
     }
+    // 商品登録画面
+    public function create()
+    {
+        $seasons = Season::all();
+        return view('products.create', compact('seasons'));
+    }
+    // 商品登録処理
+    public function store(ProductRequest $request)
+    {
+        $product = $request->only([
+            'name','price','image','image.*','seasons','season_id','description']);
+            Product::create($product);
+
+        // 商品データ作成
+        $product = new Product();
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->seasons = $request->seasons;
+        $product->season_id = $request->season_id;
+        $product->image = $imagePath;
+        $product->description = $request->description;
+
+        // 画像アップロード処理
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('products', 'public');
+            $validated['image'] = $path;
+            $product->save();
+        }
+        $product->save();
+        return view('/products', ['product' => $product]);
+    }
+    public function getSearch(Request $request)
+    {
+        $sort = $request->input('sort', 'asc');
+
+        $query = Product::query();
+
+        if ($request->filled('keyword')){
+            $keyword = $request->input('keyword');
+            $query->where('name', 'like', '%' . $keyword. '%');
+        }
+
+        $products = $query->orderBy('price', 'sort')->get();
+
+        return view('products.index', compact('products', 'keyword', 'sort'));
+    }
+    public function postSearch(Request $request)
+    {
+        $sort = $request->input('sort', 'asc');
+
+        $query = Product::query();
+
+        if ($request->filled('keyword')){
+            $keyword = $request->input('keyword');
+            $query->where('name', 'like', '%' . $keyword. '%');
+        }
+
+        $products = $query->orderBy('price', 'sort')->get();
+
+        return view('products.index', compact('products', 'keyword', 'sort'));
+    }
+
     // 商品削除
     public function delete($productId)
     {
         $product = Product::findOrFail($productId);
         $product->delete();
 
-        return redirect()->route('products.destroy');
+        return redirect()->route('products.index');
     }
 }
