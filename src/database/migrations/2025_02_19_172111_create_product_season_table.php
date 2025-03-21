@@ -17,7 +17,6 @@ class CreateProductSeasonTable extends Migration
             $table->foreignId('product_id')->constrained()->cascadeOnDelete();
             $table->foreignId('season_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
-            $table->unique(['product_id', 'season_id']);
         });
     }
 

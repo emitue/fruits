@@ -22,6 +22,6 @@ Laravel環境構築
 ・MySQL 8.0
 
 URL
-・開発環境:http://localhost/
+・開発環境:http://localhost/products
 ・phpMyAdmin:http://localhost:8080/
 # fruits
